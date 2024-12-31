@@ -40,7 +40,7 @@ function App() {
         <Works />
       </div>
 
-      {/* Works到Footer的过渡 */}
+      {/* Works到Footer过渡 */}
       <div className="sticky top-0 z-40">
         <GradientTransition /> 
       </div>
