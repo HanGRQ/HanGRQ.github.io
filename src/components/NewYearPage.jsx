@@ -21,7 +21,7 @@ function NewYearPage() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black relative">
-      {/* 返回按钮 */}
+      {/* 返回 */}
       <motion.img
         src="back-button.png"
         alt="Back"
