@@ -31,9 +31,9 @@ function App() {
         <Hero />
       </div>
 
-      {/* Hero到Works的过渡 */}
+      {/* Hero到Works过渡 */}
       <div className="sticky top-0 z-20">
-        <GradientTransition /> {/* 使用颜色渐变过渡 */}
+        <GradientTransition /> 
       </div>
 
       {/* Works部分 */}
