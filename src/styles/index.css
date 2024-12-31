@@ -1,0 +1,68 @@
+/* 导入 Tailwind 基础样式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义字体和基础样式 */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 bg-gray-50;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* 平滑滚动容器 */
+  .smooth-scroll {
+    @apply overflow-x-hidden;
+  }
+}
+
+/* 自定义组件样式 */
+@layer components {
+  /* 导航链接悬停效果 */
+  .nav-link {
+    @apply relative;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-current transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* 圆形过渡效果 */
+  .curved-transition {
+    @apply relative h-32 overflow-hidden;
+  }
+
+  .curved-transition::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-current;
+    border-radius: 0 0 50% 50%;
+  }
+}
+
+/* 自定义工具类 */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 动画类 */
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
