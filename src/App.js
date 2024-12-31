@@ -43,7 +43,7 @@ function App() {
 
       {/* Works到Footer的过渡 */}
       <div className="sticky top-0 z-40">
-        <GradientTransition /> {/* 使用颜色渐变过渡 */}
+        <GradientTransition /> 
       </div>
 
       {/* Footer部分 */}
