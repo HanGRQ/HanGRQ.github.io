@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 function Header() {
   const [scrolled, setScrolled] = useState(false);
 
-  // 监听滚动改变头部样式
+  // 滚动改变头部样式
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
