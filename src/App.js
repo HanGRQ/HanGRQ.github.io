@@ -26,7 +26,6 @@ function App() {
 
   const Home = () => (
     <div className="relative">
-      {/* Hero部分 */}
       <div className="min-h-screen relative z-10 bg-blue-500">
         <Hero />
       </div>
