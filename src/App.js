@@ -11,7 +11,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import NewYearPage from './components/NewYearPage';
 
-// 颜色渐变过渡组件
+// 颜色渐变过渡
 const GradientTransition = () => (
   <motion.div
     className="absolute inset-0"
