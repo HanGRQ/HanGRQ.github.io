@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Works from './components/Works';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import NewYearPage from './components/NewYearPage';
 
 // 颜色渐变过渡组件
 const GradientTransition = () => (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/about" element={<div>About Page Coming Soon</div>} />
           <Route path="/blog" element={<div>Blog Page Coming Soon</div>} />
           <Route path="/contact" element={<div>Contact Page Coming Soon</div>} />
+          <Route path="/newyear" element={<NewYearPage />} />
         </Routes>
 
         <Navigation

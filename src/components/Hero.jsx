@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="min-h-screen relative flex flex-col justify-center items-center">
       {/* 视频背景 */}
@@ -33,12 +36,13 @@ function Hero() {
         Welcome to GUA's Website
       </motion.p>
 
-      {/* 简历按钮 */}
+      {/* Click Me 按钮 */}
       <motion.button
         className="px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.6 }}
+        onClick={() => navigate('/newyear')}
       >
         Click Me
       </motion.button>
@@ -55,7 +59,6 @@ function Hero() {
       >
         [ SCROLL TO EXPLORE ]
       </motion.div>
-
     </section>
   );
 }
