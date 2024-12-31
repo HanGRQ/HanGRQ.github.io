@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
@@ -29,31 +30,10 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* 左侧 - 作者信息 */}
         <div className="text-sm">
-          © Coded by Han GRQ
+          © Coded by Sihan Ma
         </div>
-
-        {/* 右侧 - 导航菜单 */}
-        <nav className="hidden md:flex space-x-8">
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#blog">Blog</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
-        </nav>
       </div>
     </motion.header>
-  );
-}
-
-// 导航链接组件
-function NavLink({ href, children }) {
-  return (
-    <a 
-      href={href}
-      className="text-gray-600 hover:text-black transition-colors relative group"
-    >
-      {children}
-      <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform origin-center" />
-    </a>
   );
 }
 

@@ -1,3 +1,4 @@
+// src/components/Footer.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -14,15 +15,30 @@ function Footer() {
       {/* Get In Touch 横幅 */}
       <div className="relative overflow-hidden py-20 border-b border-gray-800">
         <motion.div
-          className="whitespace-nowrap text-8xl font-light"
+          className="whitespace-nowrap text-8xl font-light flex items-center"
           animate={{ x: [0, -1000] }}
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           }}
         >
-          Get In Touch - Get In Touch - Get In Touch -
+          {/* 循环内容 */}
+          {Array(10)
+            .fill(null)
+            .map((_, index) => (
+              <React.Fragment key={index}>
+                <span className="mx-4">Get In Touch -</span>
+                <div
+                  className="mx-4 w-20 h-20 rounded-full overflow-hidden flex-shrink-0 border-4 border-gray-600"
+                  style={{
+                    backgroundImage: "url('/photo.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div>
+              </React.Fragment>
+            ))}
         </motion.div>
       </div>
 

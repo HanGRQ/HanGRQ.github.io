@@ -1,3 +1,4 @@
+// src/components/Navigation.jsx
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 

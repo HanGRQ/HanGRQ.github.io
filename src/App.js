@@ -1,32 +1,54 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Works from './components/Works';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
+// 颜色渐变过渡组件
+const GradientTransition = () => (
+  <motion.div
+    className="absolute inset-0"
+    style={{
+      background: "linear-gradient(to right, #f8f9fa, #343a40)", // 颜色渐变
+    }}
+    initial={{ x: "-100%" }} // 初始位置在左侧
+    animate={{ x: "0%" }} // 动画到中心
+    exit={{ x: "100%" }} // 退出时滑向右侧
+    transition={{ duration: 0.7, ease: "easeInOut" }} // 动画持续时间与缓动效果
+  />
+);
+
 function App() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // 主页面组件
   const Home = () => (
-    <>
-      <Hero />
-      {/* 弧形过渡区域 */}
-      <div className="h-32 bg-white relative overflow-hidden">
-        <div className="absolute top-0 w-full h-32 bg-gray-100 rounded-b-[50%]" />
+    <div className="relative">
+      {/* Hero部分 */}
+      <div className="min-h-screen relative z-10 bg-blue-500">
+        <Hero />
       </div>
-      <Works />
-    </>
-  );
 
-  // 404页面组件
-  const NotFound = () => (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600">Page not found</p>
+      {/* Hero到Works的过渡 */}
+      <div className="sticky top-0 z-20">
+        <GradientTransition /> {/* 使用颜色渐变过渡 */}
+      </div>
+
+      {/* Works部分 */}
+      <div className="relative z-30 bg-gray-100">
+        <Works />
+      </div>
+
+      {/* Works到Footer的过渡 */}
+      <div className="sticky top-0 z-40">
+        <GradientTransition /> {/* 使用颜色渐变过渡 */}
+      </div>
+
+      {/* Footer部分 */}
+      <div className="relative z-50 bg-gray-900">
+        <Footer />
       </div>
     </div>
   );
@@ -35,34 +57,32 @@ function App() {
     <Router>
       <div className="relative">
         <Header />
-        
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* 添加更多路由 */}
           <Route path="/projects" element={<Works />} />
           <Route path="/about" element={<div>About Page Coming Soon</div>} />
           <Route path="/blog" element={<div>Blog Page Coming Soon</div>} />
           <Route path="/contact" element={<div>Contact Page Coming Soon</div>} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
-        
-        <Navigation 
-          isOpen={isDrawerOpen} 
-          onClose={() => setIsDrawerOpen(false)} 
+
+        <Navigation
+          isOpen={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
         />
-        
-        {/* 右上角菜单按钮 */}
+
         <button
-          className="fixed top-4 right-4 z-50 p-2 rounded-full bg-coral-500 text-white"
+          className="fixed top-4 right-4 z-50 p-2 rounded-full bg-transparent"
           onClick={() => setIsDrawerOpen(true)}
         >
-          <span>☰</span>
+          <img
+            src="/menu-button.png"
+            alt="Menu Button"
+            className="w-8 h-8"
+          />
         </button>
-        
-        <Footer />
       </div>
     </Router>
   );
 }
 
-export default App;
+export default App; 
