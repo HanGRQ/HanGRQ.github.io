@@ -29,7 +29,6 @@ function Navigation({ isOpen, onClose }) {
               onClick={onClose}
               className="absolute top-6 right-6 text-white hover:opacity-75"
             >
-              <span className="text-2xl">×</span>
             </button>
 
             {/* 导航标题 */}
@@ -38,11 +37,11 @@ function Navigation({ isOpen, onClose }) {
               
               {/* 导航链接列表 */}
               <div className="space-y-6">
-                <NavLink href="#home">Home</NavLink>
-                <NavLink href="#projects">Projects</NavLink>
-                <NavLink href="#about">About</NavLink>
-                <NavLink href="#blog">Blog</NavLink>
-                <NavLink href="#contact">Contact</NavLink>
+                <NavLink href="/">Home</NavLink>
+                <NavLink href="projects">Projects</NavLink>
+                <NavLink href="about">About</NavLink>
+                <NavLink href="blog">Blog</NavLink>
+                <NavLink href="contact">Contact</NavLink>
               </div>
 
               {/* 社交链接 */}
@@ -60,7 +59,6 @@ function Navigation({ isOpen, onClose }) {
 
                 {/* 版本信息 */}
                 <div className="mt-8 pt-8 border-t border-gray-800">
-                  <p className="text-sm text-gray-500">v2.5</p>
                   <p className="text-sm text-gray-500 mt-1">
                     {new Date().toLocaleString('en-US', { 
                       month: 'short',

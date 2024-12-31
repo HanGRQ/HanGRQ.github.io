@@ -1,13 +1,33 @@
-// src/components/Footer.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
   // 技术栈数据
   const technologies = {
-    TECHNOLOGY: ['Next.js', 'SCSS', 'LocomotiveScroll', 'FramerMotion', 'GSAP', 'Pipedream'],
-    TYPOGRAPHY: ['Montserrat', 'Cormorant Garamond', 'Ma Shan Zheng'],
-    SOCIALS: ['Github', 'Linkedin', 'Instagram', 'read.cv']
+    TECHNOLOGY: ["Next.js", "SCSS", "LocomotiveScroll", "FramerMotion", "GSAP", "Pipedream"],
+    TYPOGRAPHY: ["Montserrat", "Cormorant Garamond", "Ma Shan Zheng"],
+    SOCIALS: ["Github", "Linkedin", "Instagram", "read.cv"],
+  };
+
+  // 复制到剪贴板功能
+  const copyToClipboard = () => {
+    const email = "masihan0303@gmail.com";
+    navigator.clipboard.writeText(email).then(
+      () => {
+        alert("Email copied to clipboard!");
+      },
+      (err) => {
+        console.error("Failed to copy text: ", err);
+      }
+    );
+  };
+
+  // 跳转到 Contact 页面
+  const goToContactPage = () => {
+    navigate("/contact");
   };
 
   return (
@@ -23,7 +43,6 @@ function Footer() {
             ease: "linear",
           }}
         >
-          {/* 循环内容 */}
           {Array(10)
             .fill(null)
             .map((_, index) => (
@@ -62,12 +81,18 @@ function Footer() {
           {/* 联系方式 */}
           <div>
             <h3 className="text-sm text-gray-500 mb-6">EMAIL ME</h3>
-            <button className="text-lg hover:text-gray-300 transition-colors">
+            <button
+              className="text-lg hover:text-gray-300 transition-colors"
+              onClick={copyToClipboard}
+            >
               Click to Copy
             </button>
-            
+
             <h3 className="text-sm text-gray-500 mt-12 mb-6">REACH OUT</h3>
-            <button className="text-lg hover:text-gray-300 transition-colors">
+            <button
+              className="text-lg hover:text-gray-300 transition-colors"
+              onClick={goToContactPage}
+            >
               Send a Message
             </button>
           </div>
@@ -76,23 +101,19 @@ function Footer() {
         {/* 版权信息 */}
         <div className="mt-20 pt-8 border-t border-gray-800 flex justify-between items-center text-sm text-gray-500">
           <div>COPYRIGHT ©2024 Han GRQ</div>
-          <button className="hover:text-white transition-colors">
-            Back to Top ↑
-          </button>
+          <button className="hover:text-white transition-colors">Back to Top ↑</button>
         </div>
 
         {/* 版本和时间信息 */}
         <div className="mt-8 flex items-center space-x-8 text-sm text-gray-500">
-          <span>VERSION</span>
-          <span>.v2.5</span>
           <span>LOCAL TIME</span>
           <span>
-            {new Date().toLocaleString('en-US', {
-              month: 'short',
-              day: 'numeric',
-              hour: 'numeric',
-              minute: 'numeric',
-              hour12: true
+            {new Date().toLocaleString("en-US", {
+              month: "short",
+              day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
             })}
           </span>
         </div>

@@ -21,17 +21,6 @@ function NewYearPage() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black relative">
-      {/* 返回 */}
-      <motion.img
-        src="back-button.png"
-        alt="Back"
-        className="absolute top-4 left-4 w-12 h-12 cursor-pointer hover:scale-110 transition-transform"
-        onClick={handleBack}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      />
       
       <div className="w-[90%] h-[90vh] relative">
         {!showVideo ? (

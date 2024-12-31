@@ -6,22 +6,22 @@ function Works() {
   // 项目数据
   const projects = [
     {
-      title: "Unmanned Drone Flight Path Optimization",
+      title: "TMDB Movie APP",
       period: "May.2024 - Present",
-      description: "无人机飞行路径优化项目",
-      tags: ["Python", "Algorithm", "Optimization"]
-    },
-    {
-      title: "Reforestation Progress Tracking Desktop App",
-      period: "July.2024 - Present",
-      description: "森林再生追踪桌面应用",
+      description: "TMDB电影应用",
       tags: ["React", "Electron", "Node.js"]
     },
     {
-      title: "600V Li-ion Battery Optimization",
-      period: "Sept.2023 - Present",
-      description: "锂电池优化项目",
-      tags: ["Hardware", "Research", "Analysis"]
+      title: "Calorie Counter Mobile APP Using Watson Visual Recognition",
+      period: "July.2024 - Present",
+      description: "使用 Watson Visual Recognition 的卡路里计数器移动应用程序",
+      tags: ["Android", "Java"]
+    },
+    {
+      title: "FoodMind",
+      period: "Sept.2024 - Present",
+      description: "基于Android的营养和情绪行为跟踪系统",
+      tags: ["Android", "Kotlin"]
     }
   ];
 
@@ -58,9 +58,7 @@ function Works() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          My comprehensive experience in Front-end Designs, Back-end Algorithms, 
-          and Mechanical Systems gives me a thorough understanding of the end-to-end 
-          product development process.
+          I am currently learning and developing skills in Front-end Design, Back-end Algorithms, and Mechanical Systems to gain a deeper understanding of the end-to-end product development process.
         </motion.p>
       </div>
     </section>
@@ -99,14 +97,18 @@ function ProjectItem({ project, index }) {
       </div>
 
       {/* 查看更多按钮 */}
-      <motion.button
+      <motion.a
+        href="https://github.com/HanGRQ"
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-4 text-sm text-gray-500 hover:text-black flex items-center gap-1"
         whileHover={{ x: 5 }}
         transition={{ type: 'tween' }}
       >
         Learn more 
         <span className="text-xs">→</span>
-      </motion.button>
+      </motion.a>
+
     </motion.div>
   );
 }

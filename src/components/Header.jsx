@@ -30,7 +30,7 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* 左侧 - 作者信息 */}
         <div className="text-sm">
-          © Coded by Sihan Ma
+          © Coded by Sihan
         </div>
       </div>
     </motion.header>

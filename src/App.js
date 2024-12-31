@@ -6,6 +6,9 @@ import Hero from './components/Hero';
 import Works from './components/Works';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import About from './components/About';
+import Blog from './components/Blog';
+import Contact from './components/Contact';
 import NewYearPage from './components/NewYearPage';
 
 // 颜色渐变过渡组件
@@ -60,9 +63,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Works />} />
-          <Route path="/about" element={<div>About Page Coming Soon</div>} />
-          <Route path="/blog" element={<div>Blog Page Coming Soon</div>} />
-          <Route path="/contact" element={<div>Contact Page Coming Soon</div>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/blog" element={<Blog/>} />
+          <Route path="/contact" element={<Contact/>} />
           <Route path="/newyear" element={<NewYearPage />} />
         </Routes>
 
@@ -73,7 +76,7 @@ function App() {
 
         <button
           className="fixed top-4 right-4 z-50 p-2 rounded-full bg-transparent"
-          onClick={() => setIsDrawerOpen(true)}
+          onClick={() => setIsDrawerOpen((prevState) => !prevState)}
         >
           <img
             src="/menu-button.png"
@@ -81,6 +84,7 @@ function App() {
             className="w-8 h-8"
           />
         </button>
+
       </div>
     </Router>
   );
