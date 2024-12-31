@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'; // 替换为 HashRouter
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -11,7 +11,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import NewYearPage from './components/NewYearPage';
 
-// 颜色渐变
+// 颜色渐变组件
 const GradientTransition = () => (
   <motion.div
     className="absolute inset-0"
@@ -34,22 +34,18 @@ function App() {
         <Hero />
       </div>
 
-      {/* Hero到Works过渡 */}
       <div className="sticky top-0 z-20">
         <GradientTransition /> 
       </div>
 
-      {/* Works部分 */}
       <div className="relative z-30 bg-gray-100">
         <Works />
       </div>
 
-      {/* Works到Footer过渡 */}
       <div className="sticky top-0 z-40">
         <GradientTransition /> 
       </div>
 
-      {/* Footer部分 */}
       <div className="relative z-50 bg-gray-900">
         <Footer />
       </div>
@@ -57,15 +53,15 @@ function App() {
   );
 
   return (
-    <Router>
+    <Router> {/* 使用 HashRouter */}
       <div className="relative">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Works />} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/blog" element={<Blog/>} />
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/newyear" element={<NewYearPage />} />
         </Routes>
 
@@ -84,10 +80,9 @@ function App() {
             className="w-8 h-8"
           />
         </button>
-
       </div>
     </Router>
   );
 }
 
-export default App; 
+export default App;

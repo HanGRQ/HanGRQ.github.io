@@ -37,12 +37,13 @@ function Navigation({ isOpen, onClose }) {
               
               {/* 导航链接列表 */}
               <div className="space-y-6">
-                <NavLink href="/">Home</NavLink>
-                <NavLink href="projects">Projects</NavLink>
-                <NavLink href="about">About</NavLink>
-                <NavLink href="blog">Blog</NavLink>
-                <NavLink href="contact">Contact</NavLink>
+                <NavLink href="#/">Home</NavLink>
+                <NavLink href="#/projects">Projects</NavLink>
+                <NavLink href="#/about">About</NavLink>
+                <NavLink href="#/blog">Blog</NavLink>
+                <NavLink href="#/contact">Contact</NavLink>
               </div>
+
 
               {/* 社交链接 */}
               <div className="absolute bottom-8 left-8 right-8">
