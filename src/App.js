@@ -10,15 +10,15 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import NewYearPage from './components/NewYearPage';
+import FYP from './components/FYP';
 
-// 颜色渐变组件
 const GradientTransition = () => (
   <motion.div
     className="absolute inset-0"
     style={{
-      background: "linear-gradient(to right, #f8f9fa, #343a40)", // 颜色渐变
+      background: "linear-gradient(to right, #f8f9fa, #343a40)", 
     }}
-    initial={{ x: "-100%" }} // 初始位置在左侧
+    initial={{ x: "-100%" }} 
     animate={{ x: "0%" }} // 动画到中心
     exit={{ x: "100%" }} // 退出时滑向右侧
     transition={{ duration: 0.7, ease: "easeInOut" }} // 动画持续时间与缓动效果
@@ -59,6 +59,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Works />} />
+          <Route path="/projects/foodmind" element={<FYP />} /> 
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />

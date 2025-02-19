@@ -33,7 +33,7 @@ function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        Welcome to GUA's Website
+        Welcome to Sihan's Website
       </motion.p>
 
       {/* Click Me 按钮 */}

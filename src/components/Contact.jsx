@@ -50,7 +50,7 @@ const Contact = () => {
             <img src="/location-pin.png" alt="Address Icon" className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-semibold">ADDRESS</h3>
-          <p className="text-gray-500 mt-2">27 13 Lowe Haven</p>
+          <p className="text-gray-500 mt-2">Third Planet in the Solar System</p>
         </motion.div>
 
         {/* 电话 */}
@@ -66,7 +66,7 @@ const Contact = () => {
             <img src="/phone.png" alt="Phone Icon" className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-semibold">PHONE</h3>
-          <p className="text-gray-500 mt-2">111 343 43 43</p>
+          <p className="text-gray-500 mt-2">Secret</p>
         </motion.div>
 
         {/* 邮箱 */}
@@ -82,7 +82,7 @@ const Contact = () => {
             <img src="/mail.png" alt="Email Icon" className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-semibold">EMAIL</h3>
-          <p className="text-gray-500 mt-2">business@info.com</p>
+          <p className="text-gray-500 mt-2">masihan0303@gmail.com</p>
         </motion.div>
       </motion.div>
     </motion.div>

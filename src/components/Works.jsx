@@ -1,6 +1,6 @@
-// src/components/Works.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';  // 添加 Link 导入
 
 function Works() {
   // 项目数据
@@ -8,27 +8,30 @@ function Works() {
     {
       title: "TMDB Movie APP",
       period: "May.2024 - Present",
-      description: "TMDB电影应用",
-      tags: ["React", "Electron", "Node.js"]
+      description: "TMDB Movie App",
+      tags: ["React", "Electron", "Node.js"],
+      link: "https://github.com/HanGRQ"  // 外部链接
     },
     {
       title: "Calorie Counter Mobile APP Using Watson Visual Recognition",
       period: "July.2024 - Present",
-      description: "使用 Watson Visual Recognition 的卡路里计数器移动应用程序",
-      tags: ["Android", "Java"]
+      description: "Calorie counter mobile app using Watson Visual Recognition",
+      tags: ["Android", "Java"],
+      link: "https://github.com/HanGRQ"  // 外部链接
     },
     {
       title: "FoodMind",
       period: "Sept.2024 - Present",
-      description: "基于Android的营养和情绪行为跟踪系统",
-      tags: ["Android", "Kotlin"]
+      description: "Nutrition and emotional behavior tracking system based on Android",
+      tags: ["Android", "Kotlin"],
+      link: "/projects/foodmind",  // 内部路由链接
+      isInternal: true  // 标记为内部链接
     }
   ];
 
   return (
     <section className="bg-white py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* 标题 */}
         <motion.h2 
           className="text-4xl font-bold mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -36,10 +39,9 @@ function Works() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Featured Works
+          My Works
         </motion.h2>
 
-        {/* 项目列表 */}
         <div className="space-y-12">
           {projects.map((project, index) => (
             <ProjectItem 
@@ -50,7 +52,6 @@ function Works() {
           ))}
         </div>
 
-        {/* 技能说明文本 */}
         <motion.p 
           className="mt-20 text-xl leading-relaxed text-gray-600"
           initial={{ opacity: 0 }}
@@ -75,16 +76,13 @@ function ProjectItem({ project, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
     >
-      {/* 项目标题和时间 */}
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-2xl font-medium">{project.title}</h3>
         <span className="text-sm text-gray-500">{project.period}</span>
       </div>
 
-      {/* 项目描述 */}
       <p className="text-gray-600 mb-4">{project.description}</p>
 
-      {/* 技术标签 */}
       <div className="flex gap-2">
         {project.tags.map((tag, tagIndex) => (
           <span 
@@ -96,19 +94,28 @@ function ProjectItem({ project, index }) {
         ))}
       </div>
 
-      {/* 查看更多按钮 */}
-      <motion.a
-        href="https://github.com/HanGRQ"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 text-sm text-gray-500 hover:text-black flex items-center gap-1"
-        whileHover={{ x: 5 }}
-        transition={{ type: 'tween' }}
-      >
-        Learn more 
-        <span className="text-xs">→</span>
-      </motion.a>
-
+      {/* 根据是否为内部链接使用不同的组件 */}
+      {project.isInternal ? (
+        <Link
+          to={project.link}
+          className="mt-4 text-sm text-gray-500 hover:text-black flex items-center gap-1"
+        >
+          Learn more 
+          <span className="text-xs">→</span>
+        </Link>
+      ) : (
+        <motion.a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 text-sm text-gray-500 hover:text-black flex items-center gap-1"
+          whileHover={{ x: 5 }}
+          transition={{ type: 'tween' }}
+        >
+          Learn more 
+          <span className="text-xs">→</span>
+        </motion.a>
+      )}
     </motion.div>
   );
 }
