@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 const FYP = () => {
   return (
     <div className="bg-white">
-      {/* Hero Section with Background Image */}
       <motion.section
         className="relative h-[70vh] bg-cover bg-center"
         style={{
