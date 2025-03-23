@@ -109,7 +109,7 @@ const FYP = () => {
                 Watch my detailed demonstration video of FoodMind in action.
               </p>
               <a
-                href="https://youtu.be/W0x_YiADmMs"
+                href="https://youtube.com/shorts/GHFsBCfBHKE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block text-red-600 hover:text-red-800"
