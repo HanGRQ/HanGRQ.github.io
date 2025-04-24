@@ -24,10 +24,10 @@ const FYP = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-9xl font-bold mb-4 text-gray-800 font-['Brush_Script_MT']">
+            <h1 className="text-6xl font-bold mb-4 text-gray-800 font-['Brush_Script_MT']">
                 FoodMind
             </h1>
-            <p className="text-3xl text-gray-600 max-w-2xl">
+            <p className="text-xl text-gray-600 max-w-2xl">
                 <b>Android-Based Nutrition and Emotional Behavior Tracking System</b>
             </p>
           </motion.div>
@@ -109,7 +109,7 @@ const FYP = () => {
                 Watch my detailed demonstration video of FoodMind in action.
               </p>
               <a
-                href="https://youtube.com/shorts/GHFsBCfBHKE"
+                href="https://youtu.be/kNUckDNrKaw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block text-red-600 hover:text-red-800"
